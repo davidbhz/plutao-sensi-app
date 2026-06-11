@@ -1,3 +1,12 @@
+const isAndroid = /Android/i.test(navigator.userAgent || "");
+const lowMemory = Number(navigator.deviceMemory || 0) > 0 && Number(navigator.deviceMemory) <= 4;
+const forcedLowPerformance = location.search.indexOf("low-performance=1") !== -1;
+
+if (isAndroid || lowMemory || forcedLowPerformance) {
+  document.documentElement.classList.add("low-performance-mode");
+  document.body.classList.add("low-performance-mode");
+}
+
 const optionSections = [
   {
     title: "Configurações do jogo",

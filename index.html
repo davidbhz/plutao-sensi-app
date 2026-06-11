@@ -11,6 +11,18 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" type="image/png" sizes="64x64" href="/icons/favicon-64.png">
   <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <script>
+    (function () {
+      var memory = Number(navigator.deviceMemory || 0);
+      var lowPerformance = /Android/i.test(navigator.userAgent || "") ||
+        (memory > 0 && memory <= 4) ||
+        location.search.indexOf("low-performance=1") !== -1;
+
+      if (lowPerformance) {
+        document.documentElement.className += " low-performance-mode";
+      }
+    }());
+  </script>
   <link rel="stylesheet" href="styles.css">
   <title>Plutão Sensi PRO</title>
 </head>
@@ -38,7 +50,7 @@
       <section class="screen active" id="home-screen" data-screen="home" aria-labelledby="screen-title">
         <div class="home-hero">
           <div class="pro-logo" aria-label="Plutão Sensi PRO">
-            <img src="/icons/home-logo.png" alt="Monograma PS PRO">
+            <img class="logo-img" src="/icons/home-logo.png" alt="Monograma PS PRO" width="384" height="384" loading="eager" decoding="async">
           </div>
           <span class="eyebrow">PREPARAÇÃO INTELIGENTE</span>
           <p>Configure sua sensi, aqueça sua mira e entre no jogo preparado.</p>

@@ -1,4 +1,4 @@
-const CACHE_NAME = "plutao-sensi-pro-v6";
+const CACHE_NAME = "plutao-sensi-pro-v8-android-compat";
 const APP_ASSETS = [
   "/",
   "/index.html",

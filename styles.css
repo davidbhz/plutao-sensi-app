@@ -873,8 +873,10 @@ svg {
 .toast {
   position: fixed;
   z-index: 100;
+  right: 14px;
   right: max(14px, calc((100vw - 480px) / 2 + 14px));
   bottom: calc(var(--nav-height) + env(safe-area-inset-bottom) + 14px);
+  left: 14px;
   left: max(14px, calc((100vw - 480px) / 2 + 14px));
   display: flex;
   gap: 10px;
@@ -918,17 +920,18 @@ svg {
 .bottom-nav {
   position: fixed;
   z-index: 60;
+  right: 0;
   right: max(0px, calc((100vw - 480px) / 2));
   bottom: 0;
+  left: 0;
   left: max(0px, calc((100vw - 480px) / 2));
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   min-height: calc(var(--nav-height) + env(safe-area-inset-bottom));
   padding: 7px 7px env(safe-area-inset-bottom);
   border-top: 1px solid #383838;
-  background: rgba(29, 29, 29, 0.96);
+  background: #1d1d21;
   box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.28);
-  backdrop-filter: blur(16px);
 }
 
 .nav-item {
@@ -1021,4 +1024,116 @@ svg {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
   }
+}
+
+html.low-performance-mode,
+html.low-performance-mode body,
+html.low-performance-mode .app-shell {
+  background: #0b0b0d;
+}
+
+html.low-performance-mode *,
+html.low-performance-mode *::before,
+html.low-performance-mode *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  scroll-behavior: auto !important;
+  transition-duration: 0.01ms !important;
+}
+
+html.low-performance-mode .app-header {
+  background: #75090c;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+}
+
+html.low-performance-mode .bottom-nav {
+  background: #19191c;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.35);
+}
+
+html.low-performance-mode body::before,
+html.low-performance-mode body::after,
+html.low-performance-mode .pro-logo::before,
+html.low-performance-mode .pro-logo::after,
+html.low-performance-mode .option-card::after,
+html.low-performance-mode .training-card::after {
+  display: none !important;
+}
+
+html.low-performance-mode .pro-logo,
+html.low-performance-mode .logo-img,
+html.low-performance-mode .primary-action,
+html.low-performance-mode .option-card,
+html.low-performance-mode .training-card,
+html.low-performance-mode .intro-panel,
+html.low-performance-mode .mini-card,
+html.low-performance-mode .sensi-result,
+html.low-performance-mode .generate-button,
+html.low-performance-mode .toast {
+  filter: none !important;
+  transform: none !important;
+  will-change: auto !important;
+}
+
+html.low-performance-mode .pro-logo {
+  background: #030304;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45);
+}
+
+html.low-performance-mode .logo-img {
+  opacity: 1;
+  object-fit: contain;
+}
+
+html.low-performance-mode .primary-action {
+  background: #860c10;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+html.low-performance-mode .mini-card,
+html.low-performance-mode .intro-panel,
+html.low-performance-mode .sensi-result {
+  background: #1d1d21;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+html.low-performance-mode .option-card,
+html.low-performance-mode .training-card {
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.28);
+}
+
+html.low-performance-mode .option-card.active,
+html.low-performance-mode .training-card.active {
+  box-shadow: 0 5px 14px rgba(74, 0, 0, 0.3);
+}
+
+html.low-performance-mode .action-icon {
+  background: #65090c;
+  box-shadow: none;
+}
+
+html.low-performance-mode .toast {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.38);
+}
+
+html.low-performance-mode .screen,
+html.low-performance-mode .option-card.just-activated,
+html.low-performance-mode .training-card.just-activated,
+html.low-performance-mode .sensi-result.reveal {
+  animation: none !important;
+}
+
+html.low-performance-mode .primary-action:active,
+html.low-performance-mode .generate-button:active,
+html.low-performance-mode .nav-item:active {
+  filter: none !important;
+  transform: none !important;
+}
+
+html.low-performance-mode .app-shell,
+html.low-performance-mode .app-header,
+html.low-performance-mode .bottom-nav,
+html.low-performance-mode .toast {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
