@@ -1,4 +1,4 @@
-const CACHE_NAME = "plutao-sensi-pro-v3";
+const CACHE_NAME = "plutao-sensi-pro-v6";
 const APP_ASSETS = [
   "/",
   "/index.html",
@@ -6,7 +6,9 @@ const APP_ASSETS = [
   "/script.js",
   "/manifest.json",
   "/icons/icon-192.png",
-  "/icons/icon-512.png"
+  "/icons/icon-512.png",
+  "/icons/favicon-64.png",
+  "/icons/home-logo.png"
 ];
 
 self.addEventListener("install", (event) => {
